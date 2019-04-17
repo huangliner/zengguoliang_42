@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<input type="button" onclick="maopao()" name="" id="" value="" />
+		<script type="text/javascript">
+//			var arr=[2,3,1,4,7,9];
+//			function sorNumber(a,b){
+//				return a - b
+//			}
+//			document.write(arr.sort(sorNumber));
+			function maopao(){
+			//冒泡排序：把所有的数据按照一定的顺序进行排列（从小到大，从大到小）
+			var a=prompt('输入');
+			var b=prompt('输入');
+			var c=prompt('输入');
+			var arr=[a,b,c];
+			//循环控制比较的轮数
+			for(var i=0;i<arr.length-1;i++){
+				//控制每一轮的比较次数
+				for(var j=0;j<arr.length-1-i;j++){
+					if(arr[j]>arr[j+1]){
+						var temp=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;
+					}
+				}
+			}
+			alert(arr);
+			}
+			
+			
+		</script>
+	</body>
+</html>

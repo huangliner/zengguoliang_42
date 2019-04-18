@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			
+			
+			
+//			var countryList=["America","Greece","Britain","Canada","China","Egypt"];
+//			var sum=countryList.join('');
+//			var Dsum=sum.split();
+//			var num=[];
+//			for(s in Dsum){
+//				 num+=Dsum[s].match(/a/ig);
+//			}
+//			alert("数组countryList中a的数量" + num);
+			
+			
+			
+			
+			
+			
+			//统计数组countryList=["America","Greece","Britain","Canada","China","Egypt"]中包含'a'或'A'元素的个数
+			var countryList=["America","Greece","Britain","Canada","China","Egypt"];
+			var sum=countryList.join(',');
+			var Dsum=sum.split(',');
+			var len=Dsum.length;
+			var m=0;
+//			alert(Dsum)
+			for(var s=0;s<len;s++){
+				if(Dsum[s].match(/a/)=='a'){
+					m++
+				}
+			}
+			alert("数组countryList中含有a或A的元素为"+m+"个");
+			
+			
+			
+			var a='48294746';
+			var b=a.split('');
+			var c=0;
+			var d=[];
+			for(var i in b){
+				c=parseInt(b[i]);
+				d.push(c);
+			}
+			console.log(d);
+			var mac=d[0];
+			for(var j=0;j<d.length;j++){
+				if(mac<d[j]){
+					mac=d[j]
+				}
+			}
+			alert('字符串a中最大的数字为'+mac);
+			
+		</script>
+	</body>
+</html>

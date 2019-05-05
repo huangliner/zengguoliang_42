@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Role(name,Qskills,TowQskills,Rskills){
+				this.name=name,
+				this.Qskills=Qskills
+				this.TowQskills=TowQskills
+				this.Rskills=Rskills
+				this.introduce=function(){
+					console.log('这个角色叫'+name+'，他的一段Q技能是'+Qskills+'，二段Q技能是'+TowQskills+'，大招是'+Rskills);
+				}
+			};
+			var AsiaRope=new Role('亚索','猴塞给','哈塞给','压力个痛痛');
+			console.log(AsiaRope.name);
+			AsiaRope.introduce();
+		</script>
+	</body>
+</html>

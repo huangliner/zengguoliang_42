@@ -3,10 +3,41 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		
+		<style type="text/css">
+			#box{
+				width: 1280px;
+				height: 700px;
+				margin: 50px auto;
+				position: relative;
+				overflow: hidden;
+				border: 1px solid red;
+			}
+			#pic{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
 	</head>
 	<body>
-		
+		<div id="box">
+			<img src="img/9863.jpg" id="pic"/>
+		</div>
 	</body>
+		<script type="text/javascript">
+			var pic=document.getElementById('pic');
+			var step=0,dir=-1;
+			setInterval(function(){
+				step+=10*dir;
+				if(step<=-2000){
+					dir=1;
+				}else if(step>=0){
+					dir=-1;
+				}
+				pic.style.top=step+'px';
+			},100)
 
+
+			
+		</script>
 </html>

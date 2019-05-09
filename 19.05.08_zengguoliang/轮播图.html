@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				text-decoration: none;
+				list-style: none;
+			}
+			#box{
+				width: 920px;
+				height: 500px;
+				margin: 50px auto;
+			}
+			#left,#right{
+				width: 200px;
+				height: 500px;
+				float: left;
+				border: blue solid 1px;
+			}
+			#center{
+				width: 500px;
+				height: 500px;
+				overflow: hidden;
+				border: 1px solid red;
+				float: left;
+			}
+			#left ul li,#right ul li{
+				width: 198px;
+				height: 98px;
+				border-top: 1px red solid;
+			}
+			.current{
+				background: red;
+			}
+			.left li:last-child,.right li:last-child{
+			border-bottom: none;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="left">
+				<ul>
+					<li class="current">图片一</li>
+					<li>图片二</li>
+					<li>图片三</li>
+					<li>图片四</li>
+					<li>图片五</li>
+				</ul>
+			</div>
+			<div id="center">
+				<a href="#"><img src="img/10.jpg" alt="" /></a>
+				<a href="#"><img src="img/09.jpg" alt="" /></a>
+				<a href="#"><img src="img/08.jpg" alt="" /></a>
+				<a href="#"><img src="img/07.jpg" alt="" /></a>
+				<a href="#"><img src="img/06.jpg" alt="" /></a>
+				<a href="#"><img src="img/05.jpg" alt="" /></a>
+				<a href="#"><img src="img/04.jpg" alt="" /></a>
+				<a href="#"><img src="img/03.jpg" alt="" /></a>
+				<a href="#"><img src="img/02.jpg" alt="" /></a>
+				<a href="#"><img src="img/01.jpg" alt="" /></a>
+			</div>
+			<div id="right">
+				<ul>
+					<li>图片六</li>
+					<li>图片七</li>
+					<li>图片八</li>
+					<li>图片九</li>
+					<li>图片十</li>
+				</ul>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				var lis=document.getElementsByTagName('li')
+				//通过标签名查找id，组成一个伪类数组，也有length这个属性
+				var pics=document.getElementsByTagName('img')
+				
+				var loop=0;
+				//定义一个变量控制pics的索引值
+				setInterval(function(){
+					loop++;
+					loop%=10;
+					for (var i=0;i<lis.length;i++) {
+						pics[i].style.display='none';
+						lis[i].className='';
+					}
+					//for循环把所有图片的display属性值都为none，然后在将要的图片display属性值为black
+					pics[loop].style.display='block';
+					lis[loop].className='current';
+				},1000)
+			}
+		</script>
+	</body>
+</html>

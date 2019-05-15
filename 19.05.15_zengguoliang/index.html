@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#top{
+				width: 352px;
+				height: 30px;
+			}
+			#top ul li{
+				width: 70px;
+				height: 30px;
+				border-top: 1px #979797 solid;
+				border-bottom: 1px #979797 solid;
+				border-left: none;
+				float: left;
+				background-color: #d8d8d8;
+				text-align: center;
+				line-height: 30px;
+			}
+			#btm{
+				width: 350px;
+				height: 170px;
+				border: 1px #979797 solid;
+				text-align: center;
+				border-top: none;
+			}
+			#btm p span{
+				width: 250px;
+				height: 100px;
+				line-height: 40px;
+			}
+			#btm p span a{
+				text-decoration: none;
+				color: black;
+			}
+			#btm p span a:hover{
+				text-decoration: none;
+				color: blue;
+			}
+			.box{
+				width: 352px;
+				height: 202px;
+				margin: 300px auto;
+			}
+		</style>
+	</head>
+	
+		<body>
+			<div class="box">
+				<div id="top">
+			<ul>
+				<li style="border-left: 1px #979797 solid;background-color: white;border-bottom: none;">公告</li>
+				<li class="count">规则</li>
+				<li class="count">论坛</li>
+				<li class="count">安全</li>
+				<li style="border-right: 1px #979797 solid;">公益</li>
+			</ul>
+		</div>
+		<div id="btm">
+			<p>
+				<span><a href="" id="t1">A股劲升！三大股指涨超1% 逾八成个</a></span>
+			</p>
+			<p>
+				<span><a href="" id="t2">5G网络助力 远程手术未来可真正实 </a></span>
+			</p>
+			<p>
+				<span><a href="" id="t3">内蒙古多地遭遇强沙尘天气 百米沙 </a></span>
+			</p>
+			<p>
+				<span><a href="" id="t4">超重近50倍！一半挂车把桥压塌连</a></span>
+			</p>
+		</div>
+			</div>
+		
+		
+		<script>
+			//onmouseover是鼠标经过事件
+			//onclick是鼠标点击事件
+		var lis=document.getElementsByTagName('li');
+		//通过标签名查找id，组成一个伪类数组，也有length这个属性
+		var t1=document.getElementById('t1');
+		var t2=document.getElementById('t2');
+		var t3=document.getElementById('t3');
+		var t4=document.getElementById('t4');
+		var text={
+			text1:{
+				tt1:'A股劲升！三大股指涨超1% 逾八成个',
+				tt2:'5G网络助力 远程手术未来可真正实',
+				tt3:'内蒙古多地遭遇强沙尘天气 百米沙',
+				tt4:'超重近50倍！一半挂车把桥压塌连'
+			},
+			text2:{
+				tt1:'飞机起飞前通知没油 乘客：坐200',
+				tt2:'WHO：若不预防 2050年全球痴呆症患',
+				tt3:'消息人士：涉通俄门调查 特朗普长子',
+				tt4:'国台办：两岸经济合作大潮和大势是'
+			},
+			text3:{
+				tt1:'国台办谈王金平福建祭祖：两岸同胞 ',
+				tt2:'或值千万美元！俄罗斯欲捞10幅受困 ',
+				tt3:'每日315.94元 两高公布国家赔偿新标 ',
+				tt4:'台胞获大陆律师职业资格 国台办：保'
+			},
+			text4:{
+				tt1:'美国肝脏移植新规生效 濒危病人获移 ',
+				tt2:'一季度全国法院新收案件760.9万件 ',
+				tt3:'每日315.94元 最高人民法院公布国家',
+				tt4:'国台办：各地落实31条惠台措施 台胞'
+			},
+			text5:{
+				tt1:'日本民间议员建议平均时薪需尽快涨 ',
+				tt2:'为防山火 美加州供电巨头欲在大风天 ',
+				tt3:'行者乐者”方锦龙：一把乐器游 ',
+				tt4:'韩国瑜称若2020当选将在高雄上班 多 '
+			}
+		}
+		
+		//循环遍历使每一个li标签都注册一个鼠标悬停事件
+		for (var i=0;i<lis.length;i++){
+			//当鼠标悬置当前li标签时，所作出的改变
+			lis[i].onmouseover=function(){
+			//循环先确保每个li标签未进过时都是蓝色背景	
+			for (var j=0;j<lis.length;j++) {
+				lis[j].style.backgroundColor='#d8d8d8';
+				lis[j].style.borderBottom='1px #979797 solid';
+			}
+			if(this.innerText=='公告'){
+				t1.innerText=text.text1.tt1;
+				t2.innerText=text.text1.tt2;
+				t3.innerText=text.text1.tt3;
+				t4.innerText=text.text1.tt4;
+			}else if(this.innerText=='规则'){
+				t1.innerText=text.text2.tt1;
+				t2.innerText=text.text2.tt2;
+				t3.innerText=text.text2.tt3;
+				t4.innerText=text.text2.tt4;
+			}else if(this.innerText=='论坛'){
+				t1.innerText=text.text3.tt1;
+				t2.innerText=text.text3.tt2;
+				t3.innerText=text.text3.tt3;
+				t4.innerText=text.text3.tt4;
+			}else if(this.innerText=='安全'){
+				t1.innerText=text.text4.tt1;
+				t2.innerText=text.text4.tt2;
+				t3.innerText=text.text4.tt3;
+				t4.innerText=text.text4.tt4;
+			}else if(this.innerText=='公益'){
+				t1.innerText=text.text5.tt1;
+				t2.innerText=text.text5.tt2;
+				t3.innerText=text.text5.tt3;
+				t4.innerText=text.text5.tt4;
+			}
+			this.style.backgroundColor='white';
+			this.style.borderBottom='1px white solid';
+		}
+		}
+		</script>
+
+</body>
+</html>

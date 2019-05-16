@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				width: 500px;
+				height: 500px;
+				background-color: aqua;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="position: relative;" id="container">
+			
+		</div>
+		<script type="text/javascript">
+			var parentNode=document.getElementById('container');
+			function Circle(options){
+				this._init(options);
+			}
+			//写在原型里面可以节省内存，进行优化，原型里面的this指向Circle创建的对象
+			Circle.prototype={
+				_init:function(options){
+					this.width=options.width||20;
+					this.height=options.height||20;
+					this.position='absolute';
+					this.top=options.top||0;
+					this.left=options.left||0;
+					this.backgroundColor=options.backgroundColor;
+					this.borderRadius=options.borderRadius;
+				},
+				render:function(){
+					//创建子元素
+					var childNode=document.createElement('div');
+					//在parentNode下面创建子div元素
+					parentNode.appendChild(childNode);
+					childNode.style.width=this.width+'px';
+					childNode.style.height=this.height+'px';
+					childNode.style.top=this.top+'px';
+					childNode.style.left=this.left+'px';
+					childNode.style.backgroundColor=this.backgroundColor;
+					//脱离文档流
+					childNode.style.position=this.position;
+					childNode.style.borderRadius=this.borderRadius;
+				},
+				
+			}
+				//获取随机数的方法
+				function getRandom(min,max){
+					return Math.floor(Math.random()*(max-min))
+				}
+				
+			setInterval(function(){
+				
+				function frequency(){
+					var r=getRandom(0,255);
+					var g=getRandom(0,255);
+					var b=getRandom(0,255);
+					var circle=new Circle({
+					backgroundColor:'rgb('+r+','+g+','+b+')',
+					top:getRandom(0,480),
+					left:getRandom(0,480)
+					
+				})
+					circle.render();
+					
+				}
+			for (var i=0;i<parentNode.children.length;i++) {
+						parentNode.children[i].remove();
+						
+				}
+			frequency();
+			frequency()
+			frequency()
+			},3000)
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				position: relative;
+			}
+			html,body,div{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			#people{
+				width: 42px;
+				height: 83px;
+				position: absolute;
+				position: relative;
+				overflow: hidden;
+				left: 0px;
+			}
+			/*
+			 *-20,-99,-180,-258,-336,-416,-497,-574,
+			 * 
+			 * 
+			 * */
+			#im{
+				position: absolute;
+				top: -237px;
+				left: -20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="people">
+			<img src="img/小人.png" id="im" style="left:-20px;"/>
+		</div>
+		<script type="text/javascript">
+				var im=document.getElementById('im');
+				var pep=document.getElementById('people');
+//				var people=document.getElementsByTagName('people')
+				var arr=[-20,-99,-180,-258,-336,-416,-497,-574];
+//				setInterval(function(){
+//					for (var i=0;i<people.length;i++) {
+//						people[i].style.display='none';
+//					}
+//				},1000);
+				var set=0;
+				function b(){
+					function f2(){
+				　　　　set;
+				　　};
+				return f2();
+				};
+				var a=0;
+				setInterval(function(){
+					im.style.left=arr[a++]+'px'
+					if(a==7){
+						a=0;
+					}
+					b();
+					pep.style.left=(set+=5)+'px';
+				},50)
+		</script>
+	</body>
+</html>

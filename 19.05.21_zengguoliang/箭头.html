@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body,head,.box{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			#left{
+				position: absolute;
+				right: 50%;
+				float: right;
+				width: 100px;
+				height: 100px;
+				position: relative;
+				overflow: hidden;
+			}
+			#left img{
+				position: absolute;
+				left: -30px;
+			}
+			#right{
+				left: 50%;
+				float: left;
+				width: 100px;
+				height: 100px;
+				position: relative;
+				overflow: hidden;
+			}
+			#right img{
+				position: absolute;
+				left: -33px;
+				top: -105px;
+			}
+			
+			
+		</style>
+	</head>
+	<body><div class="box">
+		<div id="left">
+			<img src="img/箭头2.jpg"/>
+		</div>
+		<div id="right">
+			<img src="img/箭头2.jpg"/>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/com.js"></script>
+		<script type="text/javascript">
+			var lef=50;
+			var rig=50;
+			function f1(){
+				return	function f_1(){
+					rig+=3
+				}
+			}
+			var a=f1();
+			my$('left').onclick=function(){
+				a();
+				this.style.right=rig+'%'
+			}
+			
+			function f2(){
+				return	function f_2(){
+					lef+=3
+				}
+			}
+			
+			var b=f2();
+			my$('right').onclick=function(){
+				b();
+				console.log(lef);
+				this.style.left=lef+'%'
+			}
+			
+			
+		</script>
+	</body>
+</html>
